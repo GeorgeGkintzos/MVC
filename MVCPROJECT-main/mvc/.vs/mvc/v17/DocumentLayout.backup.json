@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|c:\\users\\risk-\\source\\repos\\mvcproject-main\\mvc\\mvc\\views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|solutionrelative:mvc\\views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|c:\\users\\risk-\\source\\repos\\mvcproject-main\\mvc\\mvc\\views\\client\\editclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|solutionrelative:mvc\\views\\client\\editclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|c:\\users\\risk-\\source\\repos\\mvcproject-main\\mvc\\mvc\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|solutionrelative:mvc\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|c:\\users\\risk-\\source\\repos\\mvcproject-main\\mvc\\mvc\\views\\seller\\phonelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E4E244B8-05D3-4C23-8FC8-E620EAC269D2}|mvc\\mvc.csproj|solutionrelative:mvc\\views\\seller\\phonelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditClient.cshtml",
+              "DocumentMoniker": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Client\\EditClient.cshtml",
+              "RelativeDocumentMoniker": "mvc\\Views\\Client\\EditClient.cshtml",
+              "ToolTip": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Client\\EditClient.cshtml",
+              "RelativeToolTip": "mvc\\Views\\Client\\EditClient.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-28T22:23:00.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Client\\Edit.cshtml",
+              "RelativeDocumentMoniker": "mvc\\Views\\Client\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Client\\Edit.cshtml",
+              "RelativeToolTip": "mvc\\Views\\Client\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-28T22:22:51.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PhoneList.cshtml",
+              "DocumentMoniker": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Seller\\PhoneList.cshtml",
+              "RelativeDocumentMoniker": "mvc\\Views\\Seller\\PhoneList.cshtml",
+              "ToolTip": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Views\\Seller\\PhoneList.cshtml",
+              "RelativeToolTip": "mvc\\Views\\Seller\\PhoneList.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-28T22:06:16.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SellerController.cs",
+              "DocumentMoniker": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Controllers\\SellerController.cs",
+              "RelativeDocumentMoniker": "mvc\\Controllers\\SellerController.cs",
+              "ToolTip": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\Controllers\\SellerController.cs",
+              "RelativeToolTip": "mvc\\Controllers\\SellerController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAcwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T22:03:12.358Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

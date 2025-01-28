@@ -128,15 +128,33 @@ public class SellerController : Controller
         return View(phones);
     }
 
-    [HttpPost]
-    public IActionResult UpdateProgram(int phoneNumber, string programName)
+    [HttpGet]
+    public IActionResult UpdateProgram()
     {
-        var phone = _context.Phones.FirstOrDefault(p => p.PhoneNumber == phoneNumber);
-        if (phone != null)
+        // Your GET logic here
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult UpdateProgram(IFormCollection form)
+    {
+        foreach (var key in form.Keys)
         {
-            phone.ProgramName = programName;
-            Console.WriteLine(programName);
-            _context.SaveChanges();
+            if (key.StartsWith("programName_"))
+            {
+                var phoneNumber = key.Replace("programName_", "");
+                var programName = form[key];
+
+                if (int.TryParse(phoneNumber, out int parsedPhoneNumber))
+                {
+                    var phone = _context.Phones.FirstOrDefault(p => p.PhoneNumber == parsedPhoneNumber);
+                    if (phone != null)
+                    {
+                        phone.ProgramName = programName;
+                        _context.SaveChanges();
+                    }
+                }
+            }
         }
 
         return RedirectToAction("PhoneList");

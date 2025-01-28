@@ -17,32 +17,37 @@
                     <th>Update</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach (var phone in Model)
-                {
-                    <tr>
-                        <td>@phone.PhoneNumber</td>
-                        <td>@phone.ProgramName</td>
-                        <td>
-                            <select name="programName" class="form-control program-select">
-                                <option value="">Select Program</option>
-                                @foreach (var program in ViewData["Programs"] as List<mvc.Models.Program>)
-                                {
-                                    <option value="@program.ProgramName"
-                                            selected="@(program.ProgramName == phone.ProgramName ? "selected" : "")">
-                                        @program.ProgramName
-                                    </option>
-                                }
-                            </select>
-                        </td>
-                        <td>
-                            <button type="submit" class="btn btn-warning" name="phoneNumber" value="@phone.PhoneNumber">
-                                <i class="fas fa-sync-alt"></i> Update
-                            </button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
+<tbody>
+    @foreach (var phone in Model)
+    {
+        <tr>
+            <td>@phone.PhoneNumber</td>
+            <td>@phone.ProgramName</td>
+            <td>
+                <select name="programName_@phone.PhoneNumber" class="form-control program-select">
+                    <option value="">Select Program</option>
+                    @foreach (var program in ViewData["Programs"] as List<mvc.Models.Program>)
+                        {
+                            if (program.ProgramName == phone.ProgramName)
+                            {
+                                <option value="@program.ProgramName" selected="selected">@program.ProgramName</option>
+                            }
+                            else
+                            {
+                                <option value="@program.ProgramName">@program.ProgramName</option>
+                            }
+                        }
+                </select>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-warning" name="phoneNumber" value="@phone.PhoneNumber">
+                    <i class="fas fa-sync-alt"></i> Update
+                </button>
+            </td>
+        </tr>
+    }
+</tbody>
+
         </table>
         <div class="text-center">
             <a asp-action="Index" class="btn btn-primary">
