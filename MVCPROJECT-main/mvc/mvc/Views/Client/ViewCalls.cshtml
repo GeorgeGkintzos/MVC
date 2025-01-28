@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Customer Calls";
+}
+
+
+<h2 class="text-center">Client Calls</h2>
+
+<div class="text-center mb-4">
+    <button type="button" class="btn btn-secondary px-4" id="backButton" onclick="window.location.href='@Url.Action("Index", "Client")'">
+        Back to Index
+    </button>
+</div>
+
+<div class="container mt-4">
+    <!-- Calls Section -->
+    <div class="card mt-4">
+        <div class="card-header text-white" style="background-color: #007bff;">
+            <h4><i class="fas fa-phone-alt"></i> Call List</h4>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Call ID</th>
+                            <th>Phone Number</th>
+                            <th>Incoming/Outgoing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var call in Model)
+                        {
+                            <tr>
+                                <td>@call.CallId</td>
+                                <td>@call.PhoneNumber</td>
+                                <td> @call.Incoming</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No calls found for this customer.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<head>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<head>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow around cards */
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 8px; /* Rounded corners for the top left */
+            border-top-right-radius: 8px; /* Rounded corners for the top right */
+        }
+
+        .table {
+            margin-top: 20px;
+            border-radius: 8px; /* Rounded corners for the table */
+            overflow: hidden; /* Hide content that overflows the rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow around the table */
+        }
+
+        .thead-dark th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>

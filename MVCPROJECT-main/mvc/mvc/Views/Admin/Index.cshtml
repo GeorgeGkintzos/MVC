@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Admin | Control Panel";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="card shadow-lg rounded-3 border-0">
+                <div class="card-header bg-primary text-white text-center rounded-top">
+                    <h1><i class="fas fa-cogs"></i> Admin Control Panel</h1>
+                    <h4>Manage users, sellers, and programs</h4>
+                </div>
+                <div class="card-body text-center">
+                    <div class="buttons-container">
+                        <form asp-action="CreateSeller" method="post">
+                            <button type="submit" class="btn btn-primary mb-3 w-100">View User List</button>
+                        </form>
+                        <form asp-action="SellerList" method="post">
+                            <button type="submit" class="btn btn-success mb-3 w-100">View Seller List</button>
+                        </form>
+                        <form asp-action="CreateProgram" method="post">
+                            <button type="submit" class="btn btn-secondary mb-3 w-100">Create New Program</button>
+                        </form>
+                        <form asp-action="EditProgram" method="post">
+                            <button type="submit" class="btn btn-warning mb-3 w-100">Edit Program</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- External resources and custom styles -->
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 12px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Full width button */
+        .w-100 {
+            width: 100%;
+        }
+
+        /* Responsive Adjustments */
+        .card {
+            margin-top: 20px;
+        }
+
+        .buttons-container {
+            margin-top: 15px;
+        }
+
+        .btn {
+            font-size: 1rem;
+            padding: 10px;
+        }
+
+        }</style>
+
+</head>

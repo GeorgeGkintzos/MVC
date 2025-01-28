@@ -1,0 +1,145 @@
+﻿@model IEnumerable<mvc.Models.User>
+
+@{
+    ViewData["Title"] = "Seller | Client List";
+}
+
+<h1 class="text-center">Client List</h1>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.UserId)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                <th>@Html.DisplayNameFor(model => model.Property)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.UserId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Property)</td>
+                    <td>
+                        <a asp-action="RemoveFromClientsList" asp-route-id="@item.UserId" class="btn btn-danger-custom">
+                            <i class="fas fa-user-times"></i> Remove Client
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Move the buttons below the table -->
+<div class="text-center mb-4">
+    <a asp-action="Index" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Back to Control Panel
+    </a>
+    <a asp-action="CreateClient" class="btn btn-primary ml-3">
+        <i class="fas fa-user-plus"></i> Add Client
+    </a>
+</div>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f7f7f7;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-danger-custom {
+        background-color: red;
+        color: white;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-danger-custom:hover {
+        background-color: #dc3545;
+    }
+
+    .btn i {
+        font-size: 18px;
+    }
+
+    /* Margin to separate the buttons */
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .ml-3 {
+        margin-left: 1rem;
+    }
+</style>
