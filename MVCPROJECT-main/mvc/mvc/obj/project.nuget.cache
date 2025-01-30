@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EX5jZ/GB8BU=",
+  "dgSpecHash": "WguoHjZ7kHo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\risk-\\source\\repos\\MVCPROJECT-main\\mvc\\mvc\\mvc.csproj",
+  "projectFilePath": "C:\\Users\\risk-\\Documents\\GitHub\\MVC\\MVCPROJECT-main\\mvc\\mvc\\mvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\risk-\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\risk-\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
