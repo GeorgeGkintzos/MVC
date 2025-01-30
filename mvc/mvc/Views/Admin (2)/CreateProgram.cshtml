@@ -1,0 +1,115 @@
+﻿@model mvc.Models.Program
+
+@{
+    ViewData["Title"] = "Admin | Create a Program";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Create a Program</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateNewProgram">
+                        <div class="mb-3">
+                            <label for="ProgramName" class="control-label"><strong>Program Name</strong></label>
+                            <input type="text" asp-for="ProgramName" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Benefits" class="control-label"><strong>Benefits</strong></label>
+                            <input type="text" asp-for="Benefits" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Charge" class="control-label"><strong>Charge</strong></label>
+                            <input type="text" asp-for="Charge" class="form-control" />
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Create" class="btn btn-primary px-4 py-2" />
+                            <button type="button" class="btn btn-secondary px-4 py-2" id="backButton">Back to Index</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('backButton').onclick = function() {
+        window.location.href = '@Url.Action("Index", "Admin")';
+    };
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<style>
+    
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-top: 30px;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .btn {
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    .mb-3 {
+        margin-bottom: 1.5rem;
+    }
+</style>

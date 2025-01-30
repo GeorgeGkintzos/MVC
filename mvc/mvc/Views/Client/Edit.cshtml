@@ -1,0 +1,64 @@
+﻿@model mvc.Models.Client
+
+@{
+    ViewData["Title"] = "Client | Account Management";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">
+                        <i class="fas fa-user-circle" style="font-size: 2.3rem; vertical-align: middle;"></i>
+                        <span class="ms-2">Το Προφίλ μου</span>
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div class="mb-3">
+                            <label for="ClientId" class="form-label">
+                                <i class="fas fa-id-badge text-muted me-2"></i>
+                                Το ID σου
+                            </label>
+                            <input type="text" asp-for="ClientId" class="form-control" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Afm" class="form-label">
+                                <i class="fas fa-file-alt text-muted me-2"></i>
+                                ΑΦΜ
+                            </label>
+                            <input type="text" asp-for="Afm" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="PhoneNumber" class="form-label">
+                                <i class="fas fa-phone-alt text-muted me-2"></i>
+                                Τηλέφωνο
+                            </label>
+                            <input type="text" asp-for="PhoneNumber" class="form-control" />
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Save" class="btn btn-primary px-4" id="saveButton" />
+                            <button type="button" class="btn btn-secondary px-4" id="backButton">
+                                <i class="fas fa-arrow-left me-2"></i> Πίσω στο προφίλ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('backButton').onclick = function() {
+        window.location.href = '@Url.Action("EditClient", "Client")';
+    };
+</script>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

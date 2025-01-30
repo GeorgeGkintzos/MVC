@@ -1,0 +1,136 @@
+﻿@model mvc.Models.Program
+
+@{
+    ViewData["Title"] = "Admin | Edit Program";
+}
+
+<h1 class="text-center text-primary mb-4">Admin Panel</h1>
+<h4 class="text-center text-muted mb-4">Edit Program</h4>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-4 border-0">
+            <div class="card-body p-5">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <!-- Program Name (Read-only) -->
+                    <div class="form-group mb-3">
+                        <label asp-for="ProgramName" class="form-label fw-bold">Program Name</label>
+                        <input type="text" readonly asp-for="ProgramName" class="form-control-plaintext highlight-text" />
+                    </div>
+
+                    <!-- Benefits Field -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Benefits" class="form-label fw-bold">Benefits</label>
+                        <textarea asp-for="Benefits" class="form-control rounded-3" rows="4" placeholder="Enter the program benefits"></textarea>
+                        <span asp-validation-for="Benefits" class="text-danger"></span>
+                    </div>
+
+                    <!-- Charge Field -->
+                    <div class="form-group mb-4">
+                        <label asp-for="Charge" class="form-label fw-bold">Charge</label>
+                        <input asp-for="Charge" class="form-control rounded-3" type="number" placeholder="Enter the program charge" />
+                        <span asp-validation-for="Charge" class="text-danger"></span>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="text-center">
+                        <input type="submit" value="Save" class="btn btn-primary px-5 py-2 rounded-pill fw-bold" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to List Link -->
+<div class="text-center mt-4">
+    <a asp-action="Index" class="btn btn-secondary rounded-pill px-4 py-2">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+
+    .card {
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .form-control {
+        font-size: 1rem;
+        padding: 10px 15px;
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+
+    .highlight-text {
+        color: #28a745; /* Green color for phone number and program name */
+        font-size: 1.5rem; /* Larger size */
+        font-weight: bold;
+    }
+</style>

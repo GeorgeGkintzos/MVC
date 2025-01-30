@@ -1,0 +1,146 @@
+﻿@{
+    var unpaidBills = (List<mvc.Models.Bill>)ViewData["UnpaidBills"];
+    var paidBills = (List<mvc.Models.Bill>)ViewData["PaidBills"];
+}
+
+<div class="container mt-4">
+    
+    <div class="text-left mb-4">
+        <h2 class="text-center">Customer Bills</h2>
+        <button type="button" class="btn btn-secondary px-4 ms-3" onclick="window.location.href='@Url.Action("Index", "Client")'">
+            <i class="fas fa-arrow-left me-2"></i> Πίσω στην αρχική
+        </button>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header text-white" style="background-color: #007bff;">
+            <h4><i class="fas fa-exclamation-circle"></i> Unpaid Bills</h4>
+        </div>
+        <div class="card-body">
+            @if (unpaidBills.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Cost</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var bill in unpaidBills)
+                        {
+                            <tr>
+                                <td>@bill.Bill_Id</td>
+                                <td>@bill.Costs €</td>
+                                <td>@(bill.Paid.GetValueOrDefault() ? "Paid" : "Unpaid")</td>
+                                <td>
+                                    <form method="post" action="@Url.Action("MarkAsPaid", "Client", new { billId = bill.Bill_Id })">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-credit-card"></i> Pay Now
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No unpaid bills found.</p>
+            }
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header text-white" style="background-color: #28a745;">
+            <h4><i class="fas fa-check-circle"></i> Paid Bills</h4>
+        </div>
+        <div class="card-body">
+            @if (paidBills.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Cost</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var bill in paidBills)
+                        {
+                            <tr>
+                                <td>@bill.Bill_Id</td>
+                                <td>@bill.Costs €</td>
+                                <td><i class="fas fa-check-circle"></i> Paid</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No paid bills found.</p>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .card-header {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px; 
+        }
+
+        .table {
+            margin-top: 20px;
+            border-radius: 8px; 
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .thead-dark th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            border-radius: 5px; 
+        }
+
+            .btn-success:hover {
+                background-color: #218838;
+                border-color: #1e7e34;
+            }
+
+        h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>
